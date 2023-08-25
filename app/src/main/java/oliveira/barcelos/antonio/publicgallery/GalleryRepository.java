@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.DisplayMetrics;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -22,8 +23,11 @@ public class GalleryRepository {
     }
     public List<ImageData> loadImageData(Integer limit, Integer offSet) throws FileNotFoundException {
         List<ImageData> imageDataList = new ArrayList<>();
-        int w = (int) context.getResources().getDimension(R.dimen.im_width);
-        int h = (int) context.getResources().getDimension(R.dimen.im_height);
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        float screenWidthDp = displayMetrics.widthPixels;
+        float screenHeightDp = displayMetrics.heightPixels;
+        int w = (int) screenWidthDp/4;
+        int h = (int) screenHeightDp/4;
         String[] projection = new String[] {MediaStore.Images.Media._ID,
                 MediaStore.Images.Media.DISPLAY_NAME,
                 MediaStore.Images.Media.DATE_ADDED,
