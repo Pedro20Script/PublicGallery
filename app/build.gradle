@@ -42,4 +42,7 @@ dependencies {
     implementation "androidx.paging:paging-guava:$paging_version"
     implementation "androidx.paging:paging-runtime:$paging_version"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    def lifecycle_version = "2.4.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 }

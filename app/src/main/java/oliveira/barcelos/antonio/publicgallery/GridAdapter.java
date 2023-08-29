@@ -33,8 +33,6 @@ public class GridAdapter extends PagingDataAdapter<ImageData,MyViewHolder> {
 
         ImageData imageData = getItem(position);
 
-        TextView tvName = holder.itemView.findViewById(R.id.tvName);
-        tvName.setText(imageData.fileName);
 
         Bitmap thumb = imageData.thumb;
         ImageView imageView = holder.itemView.findViewById(R.id.imThumb);
